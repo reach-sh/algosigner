@@ -13,7 +13,7 @@ const Welcome: FunctionalComponent = (props) => {
       style="flex-direction: column; justify-content: space-between; background:url(${background}); background-size: cover;">
       <div style="flex: 1">
 
-        <section class="section pt-4 has-text-centered">
+        <section class="section pt-4 pb-0 has-text-centered">
           <img src=${logo} class="py-6" width="100" />
 
           <h1 class="title is-6 mb-0 has-text-white">
@@ -22,12 +22,15 @@ const Welcome: FunctionalComponent = (props) => {
           <img src=${logotype} width="340" />
         </section>
 
-        <section class="section pt-4">
+        <section class="section pt-4 pb-0">
           <p>
             AlgoSigner is your new way sign and create transactions on the Algorand network.
           </p>
           <p class="mt-4">
             It is also a hot wallet for Algorand currency, and can manage assets on the network.
+          </p>
+          <p class="mt-4">
+            AlgoSigner is currently in <b>BETA</b>, and it is <b>not</b> intended for production use!
           </p>
         </section>
       </div>
