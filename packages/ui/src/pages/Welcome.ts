@@ -27,7 +27,7 @@ const Welcome: FunctionalComponent = (props) => {
             AlgoSigner is your new way sign and create transactions on the Algorand network.
           </p>
           <p class="mt-4">
-            It is also a hot wallet for Algorand currency, and can manage assets on the network.
+            It is also a hot wallet for Algorand currency.
           </p>
           <p class="mt-4">
             AlgoSigner is currently in <b>BETA</b>, and it is <b>not</b> intended for production use!

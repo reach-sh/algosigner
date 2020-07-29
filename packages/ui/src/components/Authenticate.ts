@@ -22,7 +22,7 @@ const Authenticate: FunctionalComponent = (props: any) => {
       <img src=${logo} width="120" class="mb-6" />
 
       <p>
-        AlgoSigner needs your password to continue
+        AlgoSigner Beta needs your password to continue
       </p>
       <input
         class="input my-5"
