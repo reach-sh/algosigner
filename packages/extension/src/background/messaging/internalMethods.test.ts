@@ -98,7 +98,8 @@ describe('wallet flow', () => {
       ledger: Ledger.MainNet,
       wallet: {
         TestNet: [],
-        MainNet: []
+        MainNet: [],
+        Localhost: []
       }
     });
   });
@@ -120,7 +121,8 @@ describe('wallet flow', () => {
       ledger: Ledger.MainNet,
       wallet: {
         TestNet: [],
-        MainNet: []
+        MainNet: [],
+        Localhost: []
       }
     };
 
@@ -168,7 +170,8 @@ describe('wallet flow', () => {
         lock: (wallet, cb) => cb(true),
         unlock: cb => cb({
           TestNet: [],
-          MainNet: []
+          MainNet: [],
+          Localhost: []
         }),
         checkStorage: cb => cb(true),
       };
@@ -178,7 +181,8 @@ describe('wallet flow', () => {
 
     const wallet = {
       TestNet: [account],
-      MainNet: []
+      MainNet: [],
+      Localhost: []
     };
 
     expect(sendResponse).toHaveBeenCalledWith(wallet);
@@ -209,7 +213,8 @@ describe('wallet flow', () => {
         lock: (wallet, cb) => cb(true),
         unlock: cb => cb({
           TestNet: [],
-          MainNet: []
+          MainNet: [],
+          Localhost: []
         }),
         checkStorage: cb => cb(true),
       };
@@ -222,7 +227,8 @@ describe('wallet flow', () => {
         name: testImportAccount.name,
         address: testImportAccount.address
       }],
-      MainNet: []
+      MainNet: [],
+      Localhost: []
     };
 
     expect(sendResponse).toHaveBeenCalledWith(wallet);
@@ -253,7 +259,8 @@ describe('wallet flow', () => {
           TestNet: [{
             ...testImportAccount
           }],
-          MainNet: []
+          MainNet: [],
+          Localhost: []
         }),
         checkStorage: cb => cb(true),
       };
@@ -263,7 +270,8 @@ describe('wallet flow', () => {
 
     const wallet = {
       TestNet: [],
-      MainNet: []
+      MainNet: [],
+      Localhost: []
     };
 
     expect(sendResponse).toHaveBeenCalledWith(wallet);

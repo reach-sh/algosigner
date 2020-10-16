@@ -62,6 +62,11 @@ const LedgerSelect: FunctionalComponent = (props: any) => {
             class="dropdown-item">
             MainNet
           </a>
+          <a id="selectDevNet"
+            onClick=${()=>setLedger('Localhost')}
+            class="dropdown-item">
+            Localhost
+          </a>
           <a id="showWalletDetails"
             onClick=${() => setShowDetails(true)}
             class="dropdown-item">

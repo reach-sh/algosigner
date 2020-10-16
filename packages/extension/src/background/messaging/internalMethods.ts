@@ -28,24 +28,17 @@ export class InternalMethods {
     }
 
     private static safeWallet(wallet: any) {
-        let safeWallet : { TestNet: any[], MainNet: any[] } = {
+        const ledgers: Ledger[] = [Ledger.TestNet, Ledger.MainNet, Ledger.Localhost];
+        let safeWallet : { TestNet: any[], MainNet: any[], Localhost: any[] } = {
             TestNet: [],
-            MainNet: []
+            MainNet: [],
+            Localhost: []
         };
-        
-        for (var i = 0; i < wallet.TestNet.length; i++) {
-            const { address, name } = wallet['TestNet'][i];
-            safeWallet.TestNet.push({
-                address: address,
-                name: wallet.TestNet[i].name
-            });
-        }
-        for (var i = 0; i < wallet.MainNet.length; i++) {
-            const { address, name } = wallet['MainNet'][i];
-            safeWallet.MainNet.push({
-                address: address,
-                name: wallet.MainNet[i].name
-            });
+
+        for (const ledger of ledgers) {
+            for (const {address, name} of wallet[ledger]) {
+                safeWallet[ledger].push({address, name});
+            }
         }
         return safeWallet;
     }
@@ -95,7 +88,8 @@ export class InternalMethods {
         this._encryptionWrap = new encryptionWrap(request.body.params.passphrase);
         const newWallet = {
             TestNet: [],
-            MainNet: []
+            MainNet: [],
+            Localhost: []
         };
         this._encryptionWrap?.lock(JSON.stringify(newWallet),
             (isSuccessful: any) => {

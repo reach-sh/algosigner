@@ -2,7 +2,8 @@
 // can compare its existance with i.e. "Testnet" in SupportedLedger
 export enum Ledger {
     TestNet = "TestNet",
-    MainNet = "MainNet"
+    MainNet = "MainNet",
+    Localhost = "Localhost"
 }
 
 export enum Backend {

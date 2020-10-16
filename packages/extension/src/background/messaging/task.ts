@@ -382,6 +382,9 @@ export class Task {
                         case "testnet-v1.0":
                             ledger = Ledger.TestNet
                             break;
+                        default:
+                            ledger = Ledger.Localhost
+                            break;
                     }
 
                     const params = Settings.getBackendParams(ledger, API.Algod);

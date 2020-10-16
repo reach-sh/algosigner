@@ -69,7 +69,7 @@ export default class EncryptionWrap {
         if(!result)
         {
           // No accounts
-          callback && callback({TestNet: [], MainNet: []});
+          callback && callback({TestNet: [], MainNet: [], Localhost: []});
           return;
         }
 

@@ -11,12 +11,14 @@ const TIMEOUT = 500;
 export default class AssetsDetailsHelper {
     private static assetsToAdd : {[key: string]: Array<number>} = {
         [Ledger.TestNet]: [],
-        [Ledger.MainNet]: []
+        [Ledger.MainNet]: [],
+        [Ledger.Localhost]: []
     }
 
     private static timeouts = {
         [Ledger.TestNet]: null,
-        [Ledger.MainNet]: null
+        [Ledger.MainNet]: null,
+        [Ledger.Localhost]: null
     }
 
     public static add(assets: Array<number>, ledger: Ledger) {
