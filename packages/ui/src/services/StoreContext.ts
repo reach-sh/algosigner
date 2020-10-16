@@ -15,6 +15,7 @@ export const StoreProvider = ({children}) => {
     ledger: 'MainNet',
     TestNet: {},
     MainNet: {},
+    Localhost: {},
     savedRequest: null,
     setLedger: (ledger) => {
       store.ledger = ledger;
@@ -22,6 +23,7 @@ export const StoreProvider = ({children}) => {
     updateWallet: (newWallet) => {
       store.TestNet = newWallet.TestNet;
       store.MainNet = newWallet.MainNet;
+      store.Localhost = newWallet.Localhost;
     },
     saveRequest: (request) => {
       store.savedRequest = request;

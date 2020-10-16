@@ -73,7 +73,7 @@ const Account: FunctionalComponent = (props: any) => {
       </${Link}>
     </div>
 
-    ${ results && results.assets.length > 0 && html`
+    ${ results && results.assets && results.assets.length > 0 && html`
       <${AssetsList} assets=${results.assets} ledger=${ledger}/>
     `}
 

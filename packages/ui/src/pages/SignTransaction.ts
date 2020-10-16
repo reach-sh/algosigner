@@ -90,6 +90,9 @@ const SignTransaction: FunctionalComponent = (props) => {
       txLedger = 'MainNet';
     else if (tx.genesisID === "testnet-v1.0")
       txLedger = 'TestNet';
+    else
+      txLedger = 'Localhost';
+
 
     for (var i = store[txLedger].length - 1; i >= 0; i--) {
       if (store[txLedger][i].address === tx.from){

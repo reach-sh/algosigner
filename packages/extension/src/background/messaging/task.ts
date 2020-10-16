@@ -164,6 +164,8 @@ export class Task {
                             txLedger = Ledger.MainNet;
                         else if (tx.genesisID === "testnet-v1.0")
                             txLedger = Ledger.TestNet;
+                        else
+                            txLedger = Ledger.Localhost;
 
                         if (!InternalMethods.checkValidAccount(tx.from, txLedger)){
                             d.error = {
@@ -396,6 +398,9 @@ export class Task {
                             break;
                         case "testnet-v1.0":
                             ledger = Ledger.TestNet
+                            break;
+                        default:
+                            ledger = Ledger.Localhost
                             break;
                     }
 

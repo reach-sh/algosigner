@@ -10,12 +10,14 @@ const TIMEOUT = 500;
 export default class AssetsDetailsHelper {
     private static assetsToAdd : {[key: string]: Array<number>} = {
         [Ledger.TestNet]: [],
-        [Ledger.MainNet]: []
+        [Ledger.MainNet]: [],
+        [Ledger.Localhost]: []
     }
 
     private static timeouts = {
         [Ledger.TestNet]: null,
-        [Ledger.MainNet]: null
+        [Ledger.MainNet]: null,
+        [Ledger.Localhost]: null
     }
 
     public static add(assets: Array<number>, ledger: Ledger) {
@@ -34,7 +36,8 @@ export default class AssetsDetailsHelper {
         extensionStorage.getStorage('assets', (savedAssets: any) => {
             let assets = savedAssets || {
                 [Ledger.TestNet]: {},
-                [Ledger.MainNet]: {}
+                [Ledger.MainNet]: {},
+                [Ledger.Localhost]: {}
             };
 
             let assetId = this.assetsToAdd[ledger][0];
