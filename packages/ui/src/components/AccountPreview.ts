@@ -39,6 +39,9 @@ const AccountPreview: FunctionalComponent = (props: any) => {
           ${ results && html`
             <b>${numFormat(results.amount/1e6, 6)}</b> Algos
           `}
+          ${ results && results.error && html`
+            <b>Error: ${results.error}</b>
+          `}
           ${ results===null && html`
             <span class="loader"></span>
           `}

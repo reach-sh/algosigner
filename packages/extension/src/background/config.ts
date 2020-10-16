@@ -24,6 +24,18 @@ export class Settings {
                     port: ""
                 },
             },
+            [Ledger.Localhost] : {
+                [API.Algod] : {
+                    url: "http://localhost",
+                    port: "4180",
+                    apiKey: "c87f5580d7a866317b4bfe9e8b8d1dda955636ccebfa88c12b414db208dd9705"
+                },
+                [API.Indexer] : {
+                    url: "http://localhost",
+                    port: "8980",
+                    apiKey: "reach-devnet"
+                }
+            },
             apiKey: {}
         }
     }
@@ -32,7 +44,9 @@ export class Settings {
         return {
             url: this.backend_settings[this.backend][ledger][api].url,
             port: this.backend_settings[this.backend][ledger][api].port,
-            apiKey: this.backend_settings[this.backend].apiKey
+            apiKey: ledger === Ledger.Localhost
+              ? this.backend_settings[this.backend][ledger][api].apiKey
+              : this.backend_settings[this.backend].apiKey
         }
     }
 };
