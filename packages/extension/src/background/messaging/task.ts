@@ -425,16 +425,16 @@ export class Task {
                         // Application transactions only
                         if(txn && txn.type == 'appl'){
                             if('appApprovalProgram' in txn){
-                                txn.appApprovalProgram = Uint8Array.from(Buffer.from(txn.appApprovalProgram));
+                                txn.appApprovalProgram = Uint8Array.from(Buffer.from(txn.appApprovalProgram, 'base64'));
                             }
                             if('appClearProgram' in txn){
-                                txn.appClearProgram = Uint8Array.from(Buffer.from(txn.appClearProgram));
+                                txn.appClearProgram = Uint8Array.from(Buffer.from(txn.appClearProgram, 'base64'));
                             }
                             if('appArgs' in txn){
                                 var tempArgs = [];
                                 txn.appArgs.forEach(element => {
                                     logging.log(element);
-                                    tempArgs.push(Uint8Array.from(Buffer.from(element)));
+                                    tempArgs.push(Uint8Array.from(Buffer.from(element, 'base64')));
                                 });
                                 txn.appArgs = tempArgs;
                             }
